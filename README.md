@@ -1,5 +1,5 @@
 # rlisty
----
+
 ## Description
 
 rlisty is interactive terminal application built for Redis to monitor a set of lists/queues and clients
@@ -26,7 +26,7 @@ optional arguments:
   -p PORT, --port PORT  redis port (default: port)
   -d DB, --database DB  redis database (default: 0)
 
-when running commands are: q - quit, l - monitor lists, c - monitor clients
+when running, commands are: q - quit, l - monitor lists, c - monitor clients
   ```
 
 ### Monitoring lists/queues
