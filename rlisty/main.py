@@ -23,13 +23,19 @@ class RedisList:
 
 
 # cmdline args
-parser = argparse.ArgumentParser(description='monitor redis lists and clients.', add_help=False)
+parser = argparse.ArgumentParser(description='monitor redis lists and clients.',
+                                 epilog='when running commands are: q - quit, l - monitor lists, c - monitor clients\n',
+                                 add_help=False)
 parser.add_argument('file', metavar='FILENAME', type=argparse.FileType('r'), default=sys.stdin,
                     help='filename with lists to monitor (one per line)')
-parser.add_argument('-H', '--help', action='help', help='show this help message and exit')
-parser.add_argument('-h', '--host', metavar='HOST', type=str, default='localhost', dest='host', help='redis hostname')
-parser.add_argument('-p', '--port', metavar='PORT', type=int, default=6379, dest='port', help='redis port')
-parser.add_argument('-d', '--database', metavar='DB', type=int, default=0, dest='db', help='redis database')
+parser.add_argument('-H', '--help', action='help',
+                    help='show this help message and exit')
+parser.add_argument('-h', '--host', metavar='HOST', type=str, default='localhost', dest='host',
+                    help='redis hostname (default: localhost')
+parser.add_argument('-p', '--port', metavar='PORT', type=int, default=6379, dest='port',
+                    help='redis port (default: port)')
+parser.add_argument('-d', '--database', metavar='DB', type=int, default=0, dest='db',
+                    help='redis database (default: 0)')
 
 args = parser.parse_args()
 
